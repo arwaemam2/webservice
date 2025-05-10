@@ -5,7 +5,6 @@ require_once "MySQLHandler.php";
 
 $method = $_SERVER['REQUEST_METHOD'];
 $url_pieces = explode("/", $_SERVER['REQUEST_URI']);
-// تحديد موقع الـ script واستخراج الـ resource والـ id
 $script_index = array_search(basename($_SERVER['SCRIPT_NAME']), $url_pieces);
 $resource = isset($url_pieces[$script_index + 1]) ? $url_pieces[$script_index + 1] : '';
 $resource_id = (isset($url_pieces[$script_index + 2]) && is_numeric($url_pieces[$script_index + 2])) ? $url_pieces[$script_index + 2] : 0;
